@@ -1,0 +1,15 @@
+<h3>Lista de yerbas</h3>
+
+<div class="row row-cols-sm1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4" >
+  <div class="col d-flex justify-content-center-mb-4" *ngFor="let yerba of yerbas">
+    <div class="card">
+      <h5 class="card-title pt-2 text-center">{{yerba.name}}</h5>
+      <img class="mx-auto d-block" [src]="yerba.image" [alt]="yerba.name">
+      <div class="card-body">
+        <h5 class="text-primary">Precio: <span>{{yerba.price | currency}}</span></h5>
+        <button class="btn btn-primary" (click)="addToCart(yerba)">Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>  
+  

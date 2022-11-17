@@ -1,0 +1,24 @@
+<h3>Carrito de compra</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Item</th>
+        <th scope="col">Accion</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">total</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let yerba of cartList">
+      <tr>
+        <td><img class="img-thumbail" [src]="yerba.image" [alt]="yerba.name"></td>
+        <td>{{yerba.name}}</td>
+        <td>
+            <app-input-integer [(quantity)]="yerba.quantity" [max]="yerba.stock" (maxReached)="maxReached($event)"></app-input-integer>
+        </td>
+        <td>{{yerba.quantity}}</td>
+        <td>{{yerba.price * yerba.quantity}}</td>
+      </tr>
+      
+    </tbody>
+</table>
